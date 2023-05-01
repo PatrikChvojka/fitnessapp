@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "60668622038",
+    "project_id": "flutter-login-11af2",
+    "storage_bucket": "flutter-login-11af2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60668622038:android:1409c74509c38936110577",
+        "android_client_info": {
+          "package_name": "com.example.cityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60668622038-mcqra6bgerib1mngfkclagcfltb0bj9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cityapp",
+            "certificate_hash": "670825752be6dc1788df748021faf5f9fbc238ff"
+          }
+        },
+        {
+          "client_id": "60668622038-o06ieqjng9thd6u49f3fk4e9m5s98jcv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzcrWTfOOnYQAw56Kpmgv4Q5fcMRuhKDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60668622038-o06ieqjng9thd6u49f3fk4e9m5s98jcv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60668622038:android:04b9a3f57691a960110577",
+        "android_client_info": {
+          "package_name": "com.example.shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60668622038-3jqpkprsar6seaat99csr730tprnrq6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shopping",
+            "certificate_hash": "fe776965144673538c0c694a2532d8896006abee"
+          }
+        },
+        {
+          "client_id": "60668622038-nk4kb590bqska0cml4dvo0kp8e8f502t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shopping",
+            "certificate_hash": "670825752be6dc1788df748021faf5f9fbc238ff"
+          }
+        },
+        {
+          "client_id": "60668622038-o06ieqjng9thd6u49f3fk4e9m5s98jcv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzcrWTfOOnYQAw56Kpmgv4Q5fcMRuhKDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60668622038-o06ieqjng9thd6u49f3fk4e9m5s98jcv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
