@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                Row(
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -86,14 +86,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       textAlign: TextAlign.center,
                     ),
                     ElevatedButton(
-                      child: const Text('Sign Out'),
+                      child: const Text('Odhlásiť sa'),
                       onPressed: () {
                         // Signing out the user
                         context.read<AuthBloc>().add(SignOutRequested());
                       },
                     ),
                   ],
-                ),
+                ),*/
 
                 SizedBox(height: 10.0),
                 // NajnovsieRecepty

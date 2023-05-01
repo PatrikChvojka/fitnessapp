@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // style
 import '../include/style.dart' as style;
 import '../models/recepty_model.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class ReceptScreen extends StatefulWidget {
   final ReceptyVypis recept;
@@ -91,14 +92,16 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     ),
                   ),
                   SizedBox(height: 20.0),
-                  Text(
-                    widget.recept.description,
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      height: 2,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  Html(
+                    data: widget.recept.description,
+                    style: {
+                      'p': Style(
+                        fontSize: FontSize(14.0),
+                        lineHeight: LineHeight(1.7),
+                        textAlign: TextAlign.justify,
+                        color: Colors.black54,
+                      ),
+                    },
                   ),
                 ],
               ),
