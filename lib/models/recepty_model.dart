@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 Future<List<ReceptyVypis>> fetchAlbum(http.Client client) async {
   final response = await client.get(Uri.parse(
-      'https://progresivneaplikacie.sk/project/flutter_shopping/novinky.json'));
+      'https://progresivneaplikacie.sk/project/fitness/novinky.json'));
 
   return compute(parsePhotos, response.body);
 }

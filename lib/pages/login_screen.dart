@@ -12,9 +12,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // google login
   void _authenticateWithGoogle(context) {
     BlocProvider.of<AuthBloc>(context).add(
       GoogleSignInRequested(),
+    );
+  }
+
+  // facebook login
+  void _authenticateWithFacebook(context) {
+    BlocProvider.of<AuthBloc>(context).add(
+      FacebookSignInRequested(),
     );
   }
 
@@ -99,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        //AuthService().signInWithGoogle();
+                        _authenticateWithFacebook(context);
                       },
                       child: Container(
                         padding:

@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:60668622038:android:1409c74509c38936110577",
+        "mobilesdk_app_id": "1:60668622038:android:04b9a3f57691a960110577",
         "android_client_info": {
-          "package_name": "com.example.cityapp"
+          "package_name": "com.example.shopping"
         }
       },
       "oauth_client": [
         {
-          "client_id": "60668622038-mcqra6bgerib1mngfkclagcfltb0bj9h.apps.googleusercontent.com",
+          "client_id": "60668622038-3jqpkprsar6seaat99csr730tprnrq6m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.cityapp",
-            "certificate_hash": "670825752be6dc1788df748021faf5f9fbc238ff"
+            "package_name": "com.example.shopping",
+            "certificate_hash": "fe776965144673538c0c694a2532d8896006abee"
           }
         },
         {
@@ -44,25 +44,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:60668622038:android:04b9a3f57691a960110577",
+        "mobilesdk_app_id": "1:60668622038:android:080d979b9b1dff7f110577",
         "android_client_info": {
-          "package_name": "com.example.shopping"
+          "package_name": "com.progresivneaplikacie.fitnessapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "60668622038-3jqpkprsar6seaat99csr730tprnrq6m.apps.googleusercontent.com",
+          "client_id": "60668622038-64iu6m41tn9e38409aqg99disq40knfp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.shopping",
-            "certificate_hash": "fe776965144673538c0c694a2532d8896006abee"
-          }
-        },
-        {
-          "client_id": "60668622038-nk4kb590bqska0cml4dvo0kp8e8f502t.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.shopping",
+            "package_name": "com.progresivneaplikacie.fitnessapp",
             "certificate_hash": "670825752be6dc1788df748021faf5f9fbc238ff"
           }
         },
