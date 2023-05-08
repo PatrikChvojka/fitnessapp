@@ -59,6 +59,14 @@
           }
         },
         {
+          "client_id": "60668622038-ub5m0o3mb0i7jml7cl3k9bh2ulrlp1er.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.progresivneaplikacie.fitnessapp",
+            "certificate_hash": "57f2243853cb34584d20e140198ed837d5eddc9d"
+          }
+        },
+        {
           "client_id": "60668622038-o06ieqjng9thd6u49f3fk4e9m5s98jcv.apps.googleusercontent.com",
           "client_type": 3
         }
