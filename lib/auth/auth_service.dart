@@ -22,14 +22,6 @@ class AuthRepository {
     }
   }
 
-  Future<void> signInWithFacebook() async {
-    try {
-      print("facebook login");
-    } catch (e) {
-      throw Exception(e);
-    }
-  }
-
   Future<void> signOut() async {
     try {
       await _firebaseAuth.signOut();

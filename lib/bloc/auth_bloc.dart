@@ -10,17 +10,6 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository authRepository;
   AuthBloc({required this.authRepository}) : super(UnAuthenticated()) {
-    on<FacebookSignInRequested>((event, emit) async {
-      emit(Loading());
-      try {
-        await authRepository.signInWithFacebook();
-        emit(Authenticated());
-      } catch (e) {
-        emit(AuthError(e.toString()));
-        emit(UnAuthenticated());
-      }
-    });
-
     on<GoogleSignInRequested>((event, emit) async {
       emit(Loading());
       try {
