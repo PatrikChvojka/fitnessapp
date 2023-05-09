@@ -30,9 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // logged in user
 
     // signed via google
-    if (FirebaseAuth.instance.currentUser != null) {
-      final user = FirebaseAuth.instance.currentUser!;
-    }
+    // if (FirebaseAuth.instance.currentUser != null) {
+    final user = FirebaseAuth.instance.currentUser!;
+    //  }
 
     return Scaffold(
       // appbar
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                /* Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-*/
+
                 SizedBox(height: 10.0),
                 // NajnovsieRecepty
                 NajnovsieRecepty(),

@@ -1,4 +1,4 @@
-package com.example.cityapp
+package com.progresivneaplikacie.fitnessapp
 
 import io.flutter.embedding.android.FlutterActivity
 
