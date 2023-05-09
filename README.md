@@ -1,4 +1,4 @@
-# cityapp
+# Fitness Recepty
 
 A new Flutter project.
 
