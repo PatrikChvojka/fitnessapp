@@ -37,8 +37,6 @@ class _ProfilePageState extends State<ProfilePage>
 
   @override
   Widget build(BuildContext context) {
-    // create user
-
     return Scaffold(
       // appbar
       appBar: MainMenu(),
@@ -61,11 +59,12 @@ class _ProfilePageState extends State<ProfilePage>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FutureBuilder<String>(
-                  future: AuthRepository().fillUser(),
-                  builder: (context, AsyncSnapshot<String> snapshot) {
+                FutureBuilder<Map<String, dynamic>>(
+                  future: AuthRepository().fillUserJson(),
+                  builder:
+                      (context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
                     if (snapshot.hasData) {
-                      return Text(snapshot.data!);
+                      return Text(snapshot.data!["name"]);
                     } else {
                       return CircularProgressIndicator();
                     }

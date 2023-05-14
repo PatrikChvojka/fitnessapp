@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepository {
-  //final List<UserModel> firebaseUser = [];
-
   final _firebaseAuth = FirebaseAuth.instance;
 
   Future<void> signInWithGoogle() async {
@@ -25,7 +23,8 @@ class AuthRepository {
     }
   }
 
-  Future<String> fillUser() async {
+  // fill json user
+  Future<Map<String, dynamic>> fillUserJson() async {
     final user = await FirebaseAuth.instance.currentUser;
     UserModel item = UserModel(
       name: user!.displayName!,
@@ -33,7 +32,7 @@ class AuthRepository {
     );
 
     Map<String, dynamic> itemJson = item.toJson();
-    return itemJson.toString();
+    return itemJson;
   }
 
   Future<void> signOut() async {
