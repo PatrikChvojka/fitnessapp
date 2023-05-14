@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // style
+import '../include/bottom_menu.dart';
 import '../include/style.dart' as style;
 import '../models/recepty_model.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -108,6 +109,11 @@ class _ReceptScreenState extends State<ReceptScreen> {
             ),
           ],
         ),
+      ),
+      /* BOTTOM MENU */
+      bottomNavigationBar: const bottomMenu(
+        0,
+        index: 0,
       ),
     );
   }
