@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../include/bottom_menu.dart';
+import '../include/style.dart' as style;
 import '../bloc/auth_bloc.dart';
+import '../include/main_menu.dart';
 import 'homepage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -24,7 +26,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      // appbar
+      appBar: MainMenu(),
+      backgroundColor: style.MainAppStyle().bodyBG,
       body: Container(
         padding: EdgeInsets.only(
           left: 20,
@@ -102,6 +106,11 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         ),
+      ),
+      /* BOTTOM MENU */
+      bottomNavigationBar: const bottomMenu(
+        0,
+        index: 3,
       ),
     );
   }

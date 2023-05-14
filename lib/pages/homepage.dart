@@ -27,13 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // logged in user
-
-    // signed via google
-    // if (FirebaseAuth.instance.currentUser != null) {
-    //final user = FirebaseAuth.instance.currentUser!;
-    //  }
-
     return Scaffold(
       // appbar
       appBar: MainMenu(),
@@ -71,23 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              /* Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '${user.email}',
-                    style: const TextStyle(fontSize: 24),
-                    textAlign: TextAlign.center,
-                  ),
-                  ElevatedButton(
-                    child: const Text('Odhlásiť sa'),
-                    onPressed: () {
-                      // Signing out the user
-                      context.read<AuthBloc>().add(SignOutRequested());
-                    },
-                  ),
-                ],
-              ),*/
 
               SizedBox(height: 10.0),
               // NajnovsieRecepty

@@ -13,29 +13,6 @@ void main() async {
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
-/*
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'QR Code scanner',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        // scaffoldBackgroundColor: Color.fromRGBO(227, 237, 251, 1),
-      ),
-      home: const MyHomePage(),
-      routes: {
-        '/home': (context) => MyHomePage(),
-        '/zlavy': (context) => MyHomePage(),
-        '/predajne': (context) => MyHomePage(),
-        '/profil': (context) => ProfilePage(),
-      },
-    );
-  }
-}*/
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

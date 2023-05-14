@@ -51,26 +51,19 @@ class _ReceptScreenState extends State<ReceptScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // back
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: style.MainAppStyle().buttonBG,
-                          maximumSize: Size(40.0, 40.0),
-                          minimumSize: Size(40.0, 40.0),
-                        ),
-                        child: Icon(
-                          size: 23.0,
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        ),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                    ],
+                  padding: const EdgeInsets.only(left: 10.0, top: 200.0),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: style.MainAppStyle().buttonBG,
+                      maximumSize: Size(40.0, 40.0),
+                      minimumSize: Size(40.0, 40.0),
+                    ),
+                    child: Icon(
+                      size: 23.0,
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                    onPressed: () => Navigator.pop(context),
                   ),
                 ),
               ],
@@ -104,6 +97,7 @@ class _ReceptScreenState extends State<ReceptScreen> {
                       ),
                     },
                   ),
+                  SizedBox(height: 20.0),
                 ],
               ),
             ),

@@ -26,9 +26,11 @@ class AuthRepository {
   // fill json user
   Future<Map<String, dynamic>> fillUserJson() async {
     final user = await FirebaseAuth.instance.currentUser;
+
     UserModel item = UserModel(
       name: user!.displayName!,
       email: user.email!,
+      photoURL: user.photoURL!,
     );
 
     Map<String, dynamic> itemJson = item.toJson();
