@@ -41,7 +41,6 @@ dependencies:
 
   firebase_core: ^2.10.0
   firebase_auth: ^4.4.2
-  flutter_facebook_auth: ^5.0.8
   flutter_bloc: ^8.0.1
   google_sign_in: ^6.1.0
   email_validator: ^2.0.1
