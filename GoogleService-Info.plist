@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>60668622038-d0k886hocphi0thcflc3qjv927fu7l8v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.60668622038-d0k886hocphi0thcflc3qjv927fu7l8v</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>60668622038-3jqpkprsar6seaat99csr730tprnrq6m.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2RaiCWfa3qlz-8fHZx-Gou8s_N_uRBBc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>60668622038</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.progresivneaplikacie.fitnessapp</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-login-11af2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-login-11af2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:60668622038:ios:923eff7234044678110577</string>
+</dict>
+</plist>
