@@ -45,7 +45,8 @@ class ReceptyList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: recept.length,
+      // itemCount: recept.length,
+      itemCount: 3,
       itemBuilder: (BuildContext context, index) {
         ReceptyVypis receptRow = recept[index];
         return GestureDetector(

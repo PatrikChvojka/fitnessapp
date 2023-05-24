@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      //sappBar: MainMenu(),
+      appBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 90.0),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
@@ -82,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,8 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),*/
                       ],
                     ),
+
                     // Ďalšie recepty
-                    DalsieRecepty(),
+                    DalsieRecepty(count: 6, skip: 3),
                     SizedBox(height: 80.0),
                     // Ďalšie recepty
                   ],
@@ -127,11 +130,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      /* BOTTOM MENU 
+      /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
         0,
         index: 0,
-      ),*/
+      ),
     );
   }
 }

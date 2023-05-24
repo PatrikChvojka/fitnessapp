@@ -30,7 +30,7 @@ class MainMenu extends StatelessWidget implements PreferredSizeWidget {
                 );
               },
             ),
-            actions: <Widget>[
+            /*actions: <Widget>[
               IconButton(
                 icon: const Icon(Icons.add_alert),
                 tooltip: 'Show profile',
@@ -39,7 +39,7 @@ class MainMenu extends StatelessWidget implements PreferredSizeWidget {
                       const SnackBar(content: Text('Show profile')));
                 },
               ),
-            ],
+            ],*/
           );
         } else {
           // not logged in
@@ -60,7 +60,7 @@ class MainMenu extends StatelessWidget implements PreferredSizeWidget {
                 );
               },
             ),
-            actions: <Widget>[
+            /*actions: <Widget>[
               IconButton(
                 icon: const Icon(Icons.person_2),
                 tooltip: 'Show login',
@@ -69,7 +69,7 @@ class MainMenu extends StatelessWidget implements PreferredSizeWidget {
                       const SnackBar(content: Text('Show login')));
                 },
               ),
-            ],
+            ],*/
           );
         }
       },
