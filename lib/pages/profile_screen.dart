@@ -137,8 +137,7 @@ class _ProfilePageState extends State<ProfilePage>
       }),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        0,
-        index: 3,
+        index: 2,
       ),
     );
   }

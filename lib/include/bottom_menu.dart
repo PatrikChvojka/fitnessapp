@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import '../include/style.dart';
 
 class bottomMenu extends StatelessWidget {
-  const bottomMenu(int i, {Key? key, required this.index}) : super(key: key);
-
   final index;
+  const bottomMenu({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +13,12 @@ class bottomMenu extends StatelessWidget {
         Navigator.of(context).pushNamed("/home");
       }
       if (i == 1) {
-        Navigator.of(context).pushNamed("/zlavy");
-      }
+        Navigator.of(context).pushNamed("/recepty");
+      } /*
       if (i == 2) {
-        Navigator.of(context).pushNamed("/predajne");
-      }
-      if (i == 3) {
+        Navigator.of(context).pushNamed("/gym");
+      }*/
+      if (i == 2) {
         Navigator.of(context).pushNamed("/profil");
       }
     }
@@ -34,7 +33,7 @@ class bottomMenu extends StatelessWidget {
       items: [
         TabItem(icon: Icons.home_outlined, title: 'Domov'),
         TabItem(icon: Icons.receipt_long_outlined, title: 'Recepty'),
-        TabItem(icon: Icons.fitness_center, title: 'Gym'),
+        //TabItem(icon: Icons.fitness_center, title: 'Gym'),
         TabItem(icon: Icons.supervised_user_circle_outlined, title: 'Profil'),
       ],
       initialActiveIndex: index,

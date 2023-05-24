@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     // Ďalšie recepty
-                    DalsieRecepty(count: 6, skip: 3),
+                    DalsieRecepty(count: 7, skip: 3),
                     SizedBox(height: 80.0),
                     // Ďalšie recepty
                   ],
@@ -132,7 +132,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        0,
         index: 0,
       ),
     );

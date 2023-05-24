@@ -106,8 +106,7 @@ class _ReceptScreenState extends State<ReceptScreen> {
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        0,
-        index: 0,
+        index: 1,
       ),
     );
   }

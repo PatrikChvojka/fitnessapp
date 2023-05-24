@@ -1,4 +1,5 @@
 import 'package:cityapp/pages/homepage.dart';
+import 'package:cityapp/pages/recepty_vypis.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,18 +31,11 @@ class MyApp extends StatelessWidget {
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
                 return const MyHomePage();
-                /*
-                // If the snapshot has user data, then they're already signed in. So Navigating to the Dashboard.
-                if (snapshot.hasData) {
-                  return const MyHomePage();
-                }
-                // Otherwise, they're not signed in. Show the sign in page.
-                return LoginScreen();*/
               }),
           routes: {
             '/home': (context) => MyHomePage(),
-            '/zlavy': (context) => MyHomePage(),
-            '/predajne': (context) => MyHomePage(),
+            '/recepty': (context) => ReceptyVypis(),
+            '/gym': (context) => MyHomePage(),
             '/profil': (context) => ProfilePage(),
           },
         ),

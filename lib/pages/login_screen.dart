@@ -109,8 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        0,
-        index: 3,
+        index: 2,
       ),
     );
   }

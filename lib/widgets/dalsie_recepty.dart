@@ -53,8 +53,7 @@ class DalsieReceptyList extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      //itemCount: recept.length,
-      itemCount: count,
+      itemCount: (count == 0) ? recept.length : count,
       itemBuilder: (BuildContext context, index) {
         if (index > skip || index == skip) {
           ReceptyVypis receptRow = recept[index];
