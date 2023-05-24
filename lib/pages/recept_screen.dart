@@ -104,11 +104,11 @@ class _ReceptScreenState extends State<ReceptScreen> {
           ],
         ),
       ),
-      /* BOTTOM MENU */
+      /* BOTTOM MENU 
       bottomNavigationBar: const bottomMenu(
         0,
         index: 0,
-      ),
+      ),*/
     );
   }
 }

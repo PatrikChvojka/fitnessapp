@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      appBar: MainMenu(),
+      //sappBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 90.0),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
@@ -96,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ),
-                        Padding(
+                        /*Padding(
                           padding:
                               const EdgeInsets.fromLTRB(0.0, 10.0, 20.0, 10.0),
                           child: TextButton(
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             child: Text('VIAC'),
                           ),
-                        ),
+                        ),*/
                       ],
                     ),
                     // Ďalšie recepty
@@ -126,11 +127,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      /* BOTTOM MENU */
+      /* BOTTOM MENU 
       bottomNavigationBar: const bottomMenu(
         0,
         index: 0,
-      ),
+      ),*/
     );
   }
 }
