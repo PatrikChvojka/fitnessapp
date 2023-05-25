@@ -4,13 +4,9 @@ import '../models/recepty_model.dart';
 import '../include/style.dart' as style;
 import '../pages/recept_screen.dart';
 
-class NajnovsieRecepty extends StatefulWidget {
+class NajnovsieRecepty extends StatelessWidget {
   const NajnovsieRecepty({Key? key}) : super(key: key);
-  @override
-  State<NajnovsieRecepty> createState() => _NajnovsieReceptyState();
-}
 
-class _NajnovsieReceptyState extends State<NajnovsieRecepty> {
   @override
   Widget build(BuildContext context) {
     return Container(

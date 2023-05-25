@@ -66,6 +66,26 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     onPressed: () => Navigator.pop(context),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 70.0, top: 200.0),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.yellow,
+                      maximumSize: Size(40.0, 40.0),
+                      minimumSize: Size(40.0, 40.0),
+                    ),
+                    child: Icon(
+                      size: 23.0,
+                      Icons.favorite,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        favoriteDataList.add(widget.recept.nid);
+                      });
+                    },
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 10.0),

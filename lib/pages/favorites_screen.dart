@@ -3,15 +3,16 @@ import '../include/bottom_menu.dart';
 import '../include/style.dart' as style;
 import '../include/main_menu.dart';
 import '../widgets/dalsie_recepty.dart';
+import '../widgets/favorites_recepty.dart';
 
-class ReceptyVypis extends StatefulWidget {
-  const ReceptyVypis({super.key});
+class FavoritesList extends StatefulWidget {
+  const FavoritesList({super.key});
 
   @override
-  State<ReceptyVypis> createState() => _ReceptyVypisState();
+  State<FavoritesList> createState() => _FavoritesListState();
 }
 
-class _ReceptyVypisState extends State<ReceptyVypis> {
+class _FavoritesListState extends State<FavoritesList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,41 +37,13 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 30.0),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  '''Vyberte si recept''',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  'z našej ponuky',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    color: style.MainAppStyle().mainColor,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              // NajnovsieRecepty
-              SizedBox(height: 30.0),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // Ďalšie recepty
-                    DalsieRecepty(count: 0, skip: 0),
+                    // Favorites Recepty
+                    FavoritesRecepty(),
                     SizedBox(height: 80.0),
                     // Ďalšie recepty
                   ],
@@ -82,7 +55,7 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        index: 1,
+        index: 2,
       ),
     );
   }

@@ -19,12 +19,14 @@ List<ReceptyVypis> parsePhotos(String responseBody) {
 }
 
 class ReceptyVypis {
+  String nid;
   String imageUrl;
   String name;
   String shortDescription;
   String description;
 
   ReceptyVypis({
+    required this.nid,
     required this.imageUrl,
     required this.name,
     required this.shortDescription,
@@ -33,6 +35,7 @@ class ReceptyVypis {
 
   factory ReceptyVypis.fromJson(Map<String, dynamic> json) {
     return ReceptyVypis(
+      nid: json['nid'] as String,
       imageUrl: json['Image'] as String,
       name: json['Title'] as String,
       shortDescription: json['DescriptionShort'] as String,
@@ -40,3 +43,6 @@ class ReceptyVypis {
     );
   }
 }
+
+// favorites
+List<String> favoriteDataList = [];
