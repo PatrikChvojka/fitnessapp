@@ -17,7 +17,7 @@ class _FavoritesListState extends State<FavoritesList> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      appBar: MainMenu(),
+      //appBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
@@ -37,6 +37,7 @@ class _FavoritesListState extends State<FavoritesList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(height: 50.0),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

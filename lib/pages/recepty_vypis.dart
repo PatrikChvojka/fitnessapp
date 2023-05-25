@@ -16,7 +16,7 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      appBar: MainMenu(),
+      //appBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
@@ -36,7 +36,7 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 30.0),
+              SizedBox(height: 80.0),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),

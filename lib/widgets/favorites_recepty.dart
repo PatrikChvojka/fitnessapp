@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../models/recepty_model.dart';
@@ -7,106 +9,128 @@ import '../pages/recept_screen.dart';
 class FavoritesRecepty extends StatelessWidget {
   const FavoritesRecepty({super.key});
 
-  @override
   Widget build(BuildContext context) {
-    return favoriteDataList.isEmpty
-        ? Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(height: 30.0),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  '''Ešte nemáte pridané žiadne obľúbené recepty.''',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  'Recept môžete pridať do obľúbených v detaile každého receptu.',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    color: style.MainAppStyle().mainColor,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-            ],
-          )
-        : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(height: 30.0),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  '''Vychutnajte si recept''',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                child: Text(
-                  'z vašej obľúbenej ponuky',
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    color: style.MainAppStyle().mainColor,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              // recepty
-              FutureBuilder<List<ReceptyVypis>>(
-                future: fetchAlbum(http.Client()),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    return const Center(
-                      child: Text('An error has occurred!'),
-                    );
-                  } else if (snapshot.hasData) {
-                    return Padding(
+    return Container(
+      margin: EdgeInsets.only(left: 15.0, right: 15.0),
+      child: FutureBuilder(
+        future: loadData(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('An error has occurred!'),
+            );
+          } else if (snapshot.hasData) {
+            // load favorites from shared preferences ( loadData() )
+            List<String> favoriteDataListLoaded =
+                List<String>.from(json.decode(json.encode(snapshot.data)));
+
+            return favoriteDataListLoaded.isEmpty
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 30.0),
+                      Padding(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 15.0),
-                        child: FavoritesReceptyList(recept: snapshot.data!));
-                  } else {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              )
-            ],
-          );
+                            vertical: 0.0, horizontal: 20.0),
+                        child: Text(
+                          '''Ešte nemáte pridané žiadne obľúbené recepty.''',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 20.0),
+                        child: Text(
+                          'Recept môžete pridať do obľúbených v detaile každého receptu.',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            color: style.MainAppStyle().mainColor,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 30.0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 20.0),
+                        child: Text(
+                          '''Vychutnajte si recept''',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0.0, horizontal: 20.0),
+                        child: Text(
+                          'z vašej obľúbenej ponuky',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            color: style.MainAppStyle().mainColor,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      // recepty
+                      FutureBuilder<List<ReceptyVypis>>(
+                        future: fetchAlbum(http.Client()),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasError) {
+                            return const Center(
+                              child: Text('An error has occurred!'),
+                            );
+                          } else if (snapshot.hasData) {
+                            return FavoritesReceptyList(
+                                recept: snapshot.data!,
+                                favoriteDataListLoaded: favoriteDataListLoaded);
+                          } else {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
+                      )
+                    ],
+                  );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+    );
   }
 }
 
 class FavoritesReceptyList extends StatelessWidget {
-  FavoritesReceptyList({super.key, required this.recept});
+  FavoritesReceptyList(
+      {super.key, required this.recept, required this.favoriteDataListLoaded});
 
   final List<ReceptyVypis> recept;
+  final List<String> favoriteDataListLoaded;
 
   @override
   Widget build(BuildContext context) {
@@ -117,8 +141,7 @@ class FavoritesReceptyList extends StatelessWidget {
       itemCount: recept.length,
       itemBuilder: (BuildContext context, index) {
         ReceptyVypis receptRow = recept[index];
-        //if (int.parse(receptRow.nid) == 229) {
-        if (favoriteDataList.contains(receptRow.nid)) {
+        if (favoriteDataListLoaded.contains(receptRow.nid)) {
           return GestureDetector(
             onTap: () => Navigator.push(
               context,

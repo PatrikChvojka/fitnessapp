@@ -2,6 +2,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<ReceptyVypis>> fetchAlbum(http.Client client) async {
   final response = await client.get(Uri.parse(
@@ -44,5 +45,27 @@ class ReceptyVypis {
   }
 }
 
-// favorites
+// favorites list
 List<String> favoriteDataList = [];
+
+// nacitat recepty
+loadData() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.getStringList('favoriteslist') ?? '';
+}
+
+// ADD & REMOVE TO FAVORITES AND SAVE
+Future<void> addRemoveToFavorites(String nid) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String>? favoriteDataList = prefs.getStringList('favoriteslist');
+
+  // add to list
+  if (!favoriteDataList!.contains(nid)) {
+    favoriteDataList.add(nid);
+  } else {
+    favoriteDataList.remove(nid);
+  }
+
+  // add list to shared preferences
+  await prefs.setStringList('favoriteslist', favoriteDataList);
+}

@@ -81,7 +81,8 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     ),
                     onPressed: () {
                       setState(() {
-                        favoriteDataList.add(widget.recept.nid);
+                        addRemoveToFavorites(widget.recept.nid);
+                        // removeFromFavorites(widget.recept.nid);
                       });
                     },
                   ),
