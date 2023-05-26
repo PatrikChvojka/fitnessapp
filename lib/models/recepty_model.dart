@@ -45,27 +45,33 @@ class ReceptyVypis {
   }
 }
 
-// favorites list
-List<String> favoriteDataList = [];
-
 // nacitat recepty
 loadData() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  return prefs.getStringList('favoriteslist') ?? '';
+  return prefs.getStringList('favoriteslistt') ?? '';
 }
 
 // ADD & REMOVE TO FAVORITES AND SAVE
 Future<void> addRemoveToFavorites(String nid) async {
+  List<String>? favoriteDataList = [];
+
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  List<String>? favoriteDataList = prefs.getStringList('favoriteslist');
+  favoriteDataList = prefs.getStringList('favoriteslistt');
 
   // add to list
-  if (!favoriteDataList!.contains(nid)) {
-    favoriteDataList.add(nid);
-  } else {
-    favoriteDataList.remove(nid);
-  }
+  if (favoriteDataList != null) {
+    if (!favoriteDataList!.contains(nid)) {
+      favoriteDataList.add(nid);
+    } else {
+      favoriteDataList.remove(nid);
+    }
 
-  // add list to shared preferences
-  await prefs.setStringList('favoriteslist', favoriteDataList);
+    // add list to shared preferences
+    await prefs.setStringList('favoriteslistt', favoriteDataList);
+  } else {
+    //firt time load
+    List<String> favoriteDataList = [];
+    favoriteDataList.add(nid);
+    await prefs.setStringList('favoriteslistt', favoriteDataList);
+  }
 }

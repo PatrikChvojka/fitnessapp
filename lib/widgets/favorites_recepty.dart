@@ -21,99 +21,138 @@ class FavoritesRecepty extends StatelessWidget {
             );
           } else if (snapshot.hasData) {
             // load favorites from shared preferences ( loadData() )
-            List<String> favoriteDataListLoaded =
-                List<String>.from(json.decode(json.encode(snapshot.data)));
+            Object? data = snapshot.data;
+            if (data != "") {
+              List<String> favoriteDataListLoaded =
+                  List<String>.from(json.decode(json.encode(snapshot.data)));
 
-            return favoriteDataListLoaded.isEmpty
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 30.0),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 20.0),
-                        child: Text(
-                          '''Ešte nemáte pridané žiadne obľúbené recepty.''',
-                          style: TextStyle(
-                            fontSize: 26.0,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w500,
+              return favoriteDataListLoaded.isEmpty
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 30.0),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0.0, horizontal: 20.0),
+                          child: Text(
+                            '''Ešte nemáte pridané žiadne obľúbené recepty.''',
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 20.0),
-                        child: Text(
-                          'Recept môžete pridať do obľúbených v detaile každého receptu.',
-                          style: TextStyle(
-                            fontSize: 26.0,
-                            color: style.MainAppStyle().mainColor,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w800,
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0.0, horizontal: 20.0),
+                          child: Text(
+                            'Recept môžete pridať do obľúbených v detaile každého receptu.',
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              color: style.MainAppStyle().mainColor,
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 30.0),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 20.0),
-                        child: Text(
-                          '''Vychutnajte si recept''',
-                          style: TextStyle(
-                            fontSize: 26.0,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w500,
+                      ],
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 30.0),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0.0, horizontal: 20.0),
+                          child: Text(
+                            '''Vychutnajte si recept''',
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 20.0),
-                        child: Text(
-                          'z vašej obľúbenej ponuky',
-                          style: TextStyle(
-                            fontSize: 26.0,
-                            color: style.MainAppStyle().mainColor,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w800,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0.0, horizontal: 20.0),
+                          child: Text(
+                            'z vašej obľúbenej ponuky',
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              color: style.MainAppStyle().mainColor,
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ),
+                        // recepty
+
+                        FutureBuilder<List<ReceptyVypis>>(
+                          future: fetchAlbum(http.Client()),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasError) {
+                              return const Center(
+                                child: Text('An error has occurred!'),
+                              );
+                            } else if (snapshot.hasData) {
+                              return FavoritesReceptyList(
+                                  recept: snapshot.data!,
+                                  favoriteDataListLoaded:
+                                      favoriteDataListLoaded);
+                            } else {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            }
+                          },
+                        )
+                      ],
+                    );
+            } else {
+              // first time load == empty
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(height: 30.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    child: Text(
+                      '''Ešte nemáte pridané žiadne obľúbené recepty.''',
+                      style: TextStyle(
+                        fontSize: 26.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w500,
                       ),
-                      SizedBox(
-                        height: 20,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    child: Text(
+                      'Recept môžete pridať do obľúbených v detaile každého receptu.',
+                      style: TextStyle(
+                        fontSize: 26.0,
+                        color: style.MainAppStyle().mainColor,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w800,
                       ),
-                      // recepty
-                      FutureBuilder<List<ReceptyVypis>>(
-                        future: fetchAlbum(http.Client()),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasError) {
-                            return const Center(
-                              child: Text('An error has occurred!'),
-                            );
-                          } else if (snapshot.hasData) {
-                            return FavoritesReceptyList(
-                                recept: snapshot.data!,
-                                favoriteDataListLoaded: favoriteDataListLoaded);
-                          } else {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          }
-                        },
-                      )
-                    ],
-                  );
+                    ),
+                  ),
+                ],
+              );
+            }
           } else {
             return const Center(
               child: CircularProgressIndicator(),

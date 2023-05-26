@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../include/bottom_menu.dart';
 import '../include/style.dart' as style;
 import '../include/main_menu.dart';
-import '../widgets/dalsie_recepty.dart';
 import '../widgets/favorites_recepty.dart';
 
 class FavoritesList extends StatefulWidget {
