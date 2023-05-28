@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      //appBar: MainMenu(),
+      appBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 80.0),
+              SizedBox(height: 0.0),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
@@ -73,15 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
               // NajnovsieRecepty
               SizedBox(height: 30.0),
               Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 241, 241, 241),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15.0),
-                    topRight: Radius.circular(15.0),
-                    bottomLeft: Radius.zero,
-                    bottomRight: Radius.zero,
-                  ),
-                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,

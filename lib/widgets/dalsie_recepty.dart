@@ -71,7 +71,7 @@ class DalsieReceptyList extends StatelessWidget {
               padding: EdgeInsets.all(5),
               decoration: new BoxDecoration(
                 borderRadius: new BorderRadius.circular(10.0),
-                color: Colors.white,
+                color: Color.fromARGB(255, 238, 238, 238),
                 boxShadow: [
                   BoxShadow(
                     color: Color.fromRGBO(196, 148, 70, 0.1),

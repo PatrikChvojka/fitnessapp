@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'auth/auth_service.dart';
 import 'bloc/auth_bloc.dart';
 import 'pages/favorites_screen.dart';
+import 'pages/kategorie_screen.dart';
 import 'pages/login_screen.dart';
 import 'pages/profile_screen.dart';
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
               }),
           routes: {
             '/home': (context) => MyHomePage(),
+            '/kategorie': (context) => Kategorie(),
             '/recepty': (context) => ReceptyVypis(),
             '/gym': (context) => MyHomePage(),
             '/profil': (context) => ProfilePage(),

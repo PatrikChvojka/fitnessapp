@@ -16,19 +16,10 @@ class _FavoritesListState extends State<FavoritesList> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appbar
-      //appBar: MainMenu(),
+      appBar: MainMenu(),
       backgroundColor: style.MainAppStyle().bodyBG,
       // body
       body: Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 241, 241, 241),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15.0),
-            topRight: Radius.circular(15.0),
-            bottomLeft: Radius.zero,
-            bottomRight: Radius.zero,
-          ),
-        ),
         padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
         constraints: const BoxConstraints.expand(),
         child: SingleChildScrollView(
@@ -36,7 +27,6 @@ class _FavoritesListState extends State<FavoritesList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 50.0),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -14,11 +14,11 @@ class bottomMenu extends StatelessWidget {
       }
       if (i == 1) {
         Navigator.of(context).pushNamed("/recepty");
-      } /*
+      }
       if (i == 2) {
-        Navigator.of(context).pushNamed("/gym");
-      }*/
-      if (i == 2) {
+        Navigator.of(context).pushNamed("/kategorie");
+      }
+      if (i == 3) {
         Navigator.of(context).pushNamed("/favorites");
       }
     }
@@ -33,6 +33,7 @@ class bottomMenu extends StatelessWidget {
       items: [
         TabItem(icon: Icons.home_outlined, title: 'Domov'),
         TabItem(icon: Icons.receipt_long_outlined, title: 'Recepty'),
+        TabItem(icon: Icons.no_food_outlined, title: 'Kategórie'),
         //TabItem(icon: Icons.fitness_center, title: 'Gym'),
         TabItem(icon: Icons.star_border_outlined, title: 'Obľúbené'),
       ],

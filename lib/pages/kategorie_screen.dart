@@ -3,15 +3,16 @@ import '../include/bottom_menu.dart';
 import '../include/style.dart' as style;
 import '../include/main_menu.dart';
 import '../widgets/dalsie_recepty.dart';
+import '../widgets/vypis_kategori.dart';
 
-class ReceptyVypis extends StatefulWidget {
-  const ReceptyVypis({super.key});
+class Kategorie extends StatefulWidget {
+  const Kategorie({super.key});
 
   @override
-  State<ReceptyVypis> createState() => _ReceptyVypisState();
+  State<Kategorie> createState() => _KategorieState();
 }
 
-class _ReceptyVypisState extends State<ReceptyVypis> {
+class _KategorieState extends State<Kategorie> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
                 child: Text(
-                  '''Vyberte si recept''',
+                  '''Vyberte si''',
                   style: TextStyle(
                     fontSize: 26.0,
                     fontStyle: FontStyle.italic,
@@ -43,7 +44,7 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
                 child: Text(
-                  'z našej ponuky',
+                  'z našich kategórií',
                   style: TextStyle(
                     fontSize: 26.0,
                     color: style.MainAppStyle().mainColor,
@@ -52,27 +53,15 @@ class _ReceptyVypisState extends State<ReceptyVypis> {
                   ),
                 ),
               ),
-              // NajnovsieRecepty
               SizedBox(height: 30.0),
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // Ďalšie recepty
-                    DalsieRecepty(count: 0, skip: 0),
-                    SizedBox(height: 80.0),
-                    // Ďalšie recepty
-                  ],
-                ),
-              ),
+              VypisKategorii(),
             ],
           ),
         ),
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        index: 1,
+        index: 2,
       ),
     );
   }

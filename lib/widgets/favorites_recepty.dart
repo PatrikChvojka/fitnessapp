@@ -31,7 +31,6 @@ class FavoritesRecepty extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(height: 30.0),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: 0.0, horizontal: 20.0),
@@ -66,7 +65,6 @@ class FavoritesRecepty extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(height: 30.0),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: 0.0, horizontal: 20.0),
@@ -93,7 +91,7 @@ class FavoritesRecepty extends StatelessWidget {
                           ),
                         ),
                         // recepty
-
+                        SizedBox(height: 30.0),
                         FutureBuilder<List<ReceptyVypis>>(
                           future: fetchAlbum(http.Client()),
                           builder: (context, snapshot) {
@@ -121,7 +119,6 @@ class FavoritesRecepty extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 30.0),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 0.0, horizontal: 20.0),
@@ -195,7 +192,7 @@ class FavoritesReceptyList extends StatelessWidget {
               padding: EdgeInsets.all(5),
               decoration: new BoxDecoration(
                 borderRadius: new BorderRadius.circular(10.0),
-                color: Colors.white,
+                color: Color.fromARGB(255, 238, 238, 238),
                 boxShadow: [
                   BoxShadow(
                     color: Color.fromRGBO(196, 148, 70, 0.1),

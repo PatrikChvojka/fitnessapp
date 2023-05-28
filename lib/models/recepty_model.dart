@@ -45,7 +45,9 @@ class ReceptyVypis {
   }
 }
 
-// nacitat recepty
+// favorites
+
+// nacitat recepty z uložiska
 loadData() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   return prefs.getStringList('favoriteslistt') ?? '';
