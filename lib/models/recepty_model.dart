@@ -20,11 +20,16 @@ List<ReceptyVypis> parsePhotos(String responseBody) {
 }
 
 class ReceptyVypis {
-  String nid;
-  String imageUrl;
-  String name;
-  String shortDescription;
-  String description;
+  String nid,
+      imageUrl,
+      name,
+      shortDescription,
+      description,
+      Kategorie,
+      Ingrediencie,
+      Postup,
+      porcii,
+      cas;
 
   ReceptyVypis({
     required this.nid,
@@ -32,6 +37,11 @@ class ReceptyVypis {
     required this.name,
     required this.shortDescription,
     required this.description,
+    required this.Kategorie,
+    required this.Ingrediencie,
+    required this.Postup,
+    required this.porcii,
+    required this.cas,
   });
 
   factory ReceptyVypis.fromJson(Map<String, dynamic> json) {
@@ -41,6 +51,11 @@ class ReceptyVypis {
       name: json['Title'] as String,
       shortDescription: json['DescriptionShort'] as String,
       description: json['Description'] as String,
+      Kategorie: json['Kategorie'] as String,
+      Ingrediencie: json['Ingrediencie'] as String,
+      Postup: json['Postup'] as String,
+      porcii: json['porcii'] as String,
+      cas: json['cas'] as String,
     );
   }
 }

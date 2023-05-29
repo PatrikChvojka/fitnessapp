@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // NajnovsieRecepty
               NajnovsieRecepty(),
               // NajnovsieRecepty
-              SizedBox(height: 30.0),
+              SizedBox(height: 10.0),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     // Ďalšie recepty
-                    DalsieRecepty(count: 7, skip: 3),
+                    DalsieRecepty(count: 8, skip: 4),
                     SizedBox(height: 80.0),
                     // Ďalšie recepty
                   ],

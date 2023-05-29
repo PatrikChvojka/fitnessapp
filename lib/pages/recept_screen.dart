@@ -17,6 +17,11 @@ class ReceptScreen extends StatefulWidget {
 class _ReceptScreenState extends State<ReceptScreen> {
   @override
   Widget build(BuildContext context) {
+    List<String> postupList;
+    widget.recept.Postup.isNotEmpty
+        ? postupList = widget.recept.Postup.split('|')
+        : postupList = [];
+
     return Scaffold(
       backgroundColor: style.MainAppStyle().bodyBG,
       body: SingleChildScrollView(
@@ -82,7 +87,6 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     onPressed: () {
                       setState(() {
                         addRemoveToFavorites(widget.recept.nid);
-                        // removeFromFavorites(widget.recept.nid);
                       });
                     },
                   ),
@@ -107,17 +111,85 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     ),
                   ),
                   SizedBox(height: 20.0),
-                  Html(
-                    data: widget.recept.description,
-                    style: {
-                      'p': Style(
-                        fontSize: FontSize(14.0),
-                        lineHeight: LineHeight(1.7),
-                        textAlign: TextAlign.justify,
-                        color: Colors.black54,
-                      ),
-                    },
-                  ),
+                  widget.recept.Postup.isNotEmpty
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Postup:",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              itemCount: postupList.length,
+                              itemBuilder: (BuildContext context, index) {
+                                return Row(
+                                  children: [
+                                    Text('${index} '),
+                                    Expanded(
+                                        child: Text('${postupList[index]}')),
+                                  ],
+                                );
+                              },
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  widget.recept.Ingrediencie.isNotEmpty
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Ingrediencie:",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Html(
+                              data: widget.recept.Ingrediencie,
+                              style: {
+                                'p': Style(
+                                  fontSize: FontSize(14.0),
+                                  lineHeight: LineHeight(1.7),
+                                  textAlign: TextAlign.justify,
+                                  color: Colors.black54,
+                                ),
+                              },
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  widget.recept.description.isNotEmpty
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Popis:",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Html(
+                              data: widget.recept.description,
+                              style: {
+                                'p': Style(
+                                  fontSize: FontSize(14.0),
+                                  lineHeight: LineHeight(1.7),
+                                  textAlign: TextAlign.justify,
+                                  color: Colors.black54,
+                                ),
+                              },
+                            ),
+                          ],
+                        )
+                      : Container(),
                   SizedBox(height: 20.0),
                 ],
               ),

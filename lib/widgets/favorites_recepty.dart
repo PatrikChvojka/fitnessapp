@@ -31,32 +31,24 @@ class FavoritesRecepty extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 0.0, horizontal: 20.0),
-                          child: Text(
-                            '''Ešte nemáte pridané žiadne obľúbené recepty.''',
-                            style: TextStyle(
-                              fontSize: 26.0,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        Text(
+                          '''Ešte nemáte pridané žiadne obľúbené recepty.''',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         SizedBox(
                           height: 20.0,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 0.0, horizontal: 20.0),
-                          child: Text(
-                            'Recept môžete pridať do obľúbených v detaile každého receptu.',
-                            style: TextStyle(
-                              fontSize: 26.0,
-                              color: style.MainAppStyle().mainColor,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w800,
-                            ),
+                        Text(
+                          'Recept môžete pridať do obľúbených v detaile každého receptu.',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            color: style.MainAppStyle().mainColor,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ],
@@ -65,29 +57,21 @@ class FavoritesRecepty extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 0.0, horizontal: 20.0),
-                          child: Text(
-                            '''Vychutnajte si recept''',
-                            style: TextStyle(
-                              fontSize: 26.0,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        Text(
+                          '''Vychutnajte si recept''',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 0.0, horizontal: 20.0),
-                          child: Text(
-                            'z vašej obľúbenej ponuky',
-                            style: TextStyle(
-                              fontSize: 26.0,
-                              color: style.MainAppStyle().mainColor,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w800,
-                            ),
+                        Text(
+                          'z vašej obľúbenej ponuky',
+                          style: TextStyle(
+                            fontSize: 26.0,
+                            color: style.MainAppStyle().mainColor,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                         // recepty
@@ -119,32 +103,24 @@ class FavoritesRecepty extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 20.0),
-                    child: Text(
-                      '''Ešte nemáte pridané žiadne obľúbené recepty.''',
-                      style: TextStyle(
-                        fontSize: 26.0,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  Text(
+                    '''Ešte nemáte pridané žiadne obľúbené recepty.''',
+                    style: TextStyle(
+                      fontSize: 26.0,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 20.0),
-                    child: Text(
-                      'Recept môžete pridať do obľúbených v detaile každého receptu.',
-                      style: TextStyle(
-                        fontSize: 26.0,
-                        color: style.MainAppStyle().mainColor,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w800,
-                      ),
+                  Text(
+                    'Recept môžete pridať do obľúbených v detaile každého receptu.',
+                    style: TextStyle(
+                      fontSize: 26.0,
+                      color: style.MainAppStyle().mainColor,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w800,
                     ),
                   ),
                 ],
@@ -192,15 +168,7 @@ class FavoritesReceptyList extends StatelessWidget {
               padding: EdgeInsets.all(5),
               decoration: new BoxDecoration(
                 borderRadius: new BorderRadius.circular(10.0),
-                color: Color.fromARGB(255, 238, 238, 238),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(196, 148, 70, 0.1),
-                    spreadRadius: 0,
-                    blurRadius: 6,
-                    offset: Offset(-3, 2),
-                  ),
-                ],
+                color: Colors.white,
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,7 +206,7 @@ class FavoritesReceptyList extends StatelessWidget {
                             style: TextStyle(
                               height: 1.3,
                               fontSize: 12.0,
-                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
                             ),
                           ),
                         ],

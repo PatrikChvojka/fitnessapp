@@ -4,11 +4,12 @@ import '../models/recepty_model.dart';
 import '../include/style.dart' as style;
 import '../pages/recept_screen.dart';
 
-class DalsieRecepty extends StatelessWidget {
-  final int count;
-  final int skip;
-  const DalsieRecepty({Key? key, required this.count, required this.skip})
-      : super(key: key);
+class KategoriaRecepty extends StatelessWidget {
+  final String nazovKategorie;
+  const KategoriaRecepty({
+    super.key,
+    required this.nazovKategorie,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class DalsieRecepty extends StatelessWidget {
               child: Text('An error has occurred!'),
             );
           } else if (snapshot.hasData) {
-            return DalsieReceptyList(
-                recept: snapshot.data!, count: count, skip: skip);
+            return KategoriaReceptyList(
+                recept: snapshot.data!, kategoria: nazovKategorie);
           } else {
             return const Center(
               child: CircularProgressIndicator(),
@@ -35,15 +36,11 @@ class DalsieRecepty extends StatelessWidget {
   }
 }
 
-class DalsieReceptyList extends StatelessWidget {
-  var count;
-  var skip;
+class KategoriaReceptyList extends StatelessWidget {
+  var kategoria;
 
-  DalsieReceptyList(
-      {super.key,
-      required this.recept,
-      required this.count,
-      required this.skip});
+  KategoriaReceptyList(
+      {super.key, required this.recept, required this.kategoria});
 
   final List<ReceptyVypis> recept;
 
@@ -53,10 +50,10 @@ class DalsieReceptyList extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      itemCount: (count == 0) ? recept.length : count,
+      itemCount: recept.length,
       itemBuilder: (BuildContext context, index) {
-        if (index > skip || index == skip) {
-          ReceptyVypis receptRow = recept[index];
+        ReceptyVypis receptRow = recept[index];
+        if (kategoria == receptRow.Kategorie) {
           return GestureDetector(
             onTap: () => Navigator.push(
               context,
@@ -71,7 +68,15 @@ class DalsieReceptyList extends StatelessWidget {
               padding: EdgeInsets.all(5),
               decoration: new BoxDecoration(
                 borderRadius: new BorderRadius.circular(10.0),
-                color: Colors.white,
+                color: Color.fromARGB(255, 238, 238, 238),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(196, 148, 70, 0.1),
+                    spreadRadius: 0,
+                    blurRadius: 6,
+                    offset: Offset(-3, 2),
+                  ),
+                ],
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +114,7 @@ class DalsieReceptyList extends StatelessWidget {
                             style: TextStyle(
                               height: 1.3,
                               fontSize: 12.0,
-                              color: Colors.black87,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],

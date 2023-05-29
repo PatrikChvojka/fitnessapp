@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/categories_model.dart';
 import '../models/recepty_model.dart';
 import '../include/style.dart' as style;
+import '../pages/kategoria_screen.dart';
 
 class VypisKategorii extends StatelessWidget {
   const VypisKategorii({Key? key}) : super(key: key);
@@ -46,14 +47,14 @@ class KategorieList extends StatelessWidget {
       itemBuilder: (BuildContext context, index) {
         KategorieVypis karetoriaRow = kategorie[index];
         return GestureDetector(
-          /* onTap: () => Navigator.push(
+          onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => ReceptScreen(
-                recept: receptRow,
+              builder: (_) => KategoriaDetail(
+                kategoria: karetoriaRow,
               ),
             ),
-          ),*/
+          ),
           child: Container(
             margin: EdgeInsets.all(3),
             padding: EdgeInsets.all(5),

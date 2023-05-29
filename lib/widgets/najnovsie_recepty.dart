@@ -42,7 +42,7 @@ class ReceptyList extends StatelessWidget {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       // itemCount: recept.length,
-      itemCount: 3,
+      itemCount: 4,
       itemBuilder: (BuildContext context, index) {
         ReceptyVypis receptRow = recept[index];
         return GestureDetector(
@@ -60,7 +60,6 @@ class ReceptyList extends StatelessWidget {
             width: 250.0,
             decoration: new BoxDecoration(
               borderRadius: new BorderRadius.circular(10.0),
-              color: Color.fromARGB(255, 238, 238, 238),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,9 +94,9 @@ class ReceptyList extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
+                          color: Colors.black87,
                           height: 1.3,
                           fontSize: 12.0,
-                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
