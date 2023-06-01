@@ -5,8 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<ReceptyVypis>> fetchAlbum(http.Client client) async {
-  final response = await client.get(Uri.parse(
-      'https://progresivneaplikacie.sk/project/fitness/novinky.json'));
+  final response = await client.get(Uri.parse('https://progresivneaplikacie.sk/project/fitness/novinky.json'));
 
   return compute(parsePhotos, response.body);
 }
@@ -14,22 +13,11 @@ Future<List<ReceptyVypis>> fetchAlbum(http.Client client) async {
 // A function that converts a response body into a List<Photo>.
 List<ReceptyVypis> parsePhotos(String responseBody) {
   final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
-  return parsed
-      .map<ReceptyVypis>((json) => ReceptyVypis.fromJson(json))
-      .toList();
+  return parsed.map<ReceptyVypis>((json) => ReceptyVypis.fromJson(json)).toList();
 }
 
 class ReceptyVypis {
-  String nid,
-      imageUrl,
-      name,
-      shortDescription,
-      description,
-      Kategorie,
-      Ingrediencie,
-      Postup,
-      porcii,
-      cas;
+  String nid, imageUrl, name, shortDescription, description, Kategorie, Ingrediencie, Postup, porcii, cas, Bielkoviny, KCal, Sacharidy, Tuky, Vlaknina;
 
   ReceptyVypis({
     required this.nid,
@@ -42,6 +30,11 @@ class ReceptyVypis {
     required this.Postup,
     required this.porcii,
     required this.cas,
+    required this.Bielkoviny,
+    required this.KCal,
+    required this.Sacharidy,
+    required this.Tuky,
+    required this.Vlaknina,
   });
 
   factory ReceptyVypis.fromJson(Map<String, dynamic> json) {
@@ -56,6 +49,11 @@ class ReceptyVypis {
       Postup: json['Postup'] as String,
       porcii: json['porcii'] as String,
       cas: json['cas'] as String,
+      Bielkoviny: json['Bielkoviny'] as String,
+      KCal: json['KCal'] as String,
+      Sacharidy: json['Sacharidy'] as String,
+      Tuky: json['Tuky'] as String,
+      Vlaknina: json['Vlaknina'] as String,
     );
   }
 }

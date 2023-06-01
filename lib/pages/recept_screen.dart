@@ -18,9 +18,7 @@ class _ReceptScreenState extends State<ReceptScreen> {
   @override
   Widget build(BuildContext context) {
     List<String> postupList;
-    widget.recept.Postup.isNotEmpty
-        ? postupList = widget.recept.Postup.split('|')
-        : postupList = [];
+    widget.recept.Postup.isNotEmpty ? postupList = widget.recept.Postup.split('|') : postupList = [];
 
     return Scaffold(
       backgroundColor: style.MainAppStyle().bodyBG,
@@ -97,8 +95,7 @@ class _ReceptScreenState extends State<ReceptScreen> {
 
             // body
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -106,65 +103,150 @@ class _ReceptScreenState extends State<ReceptScreen> {
                     widget.recept.name,
                     style: TextStyle(
                       fontSize: 24.0,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500,
+                      color: style.MainAppStyle().mainColor,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      widget.recept.cas.isNotEmpty
+                          ? Container(
+                              height: 100.0,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: style.MainAppStyle().buttonBG,
+                                borderRadius: BorderRadius.circular(99.0),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: TextButton(
+                                      style: ButtonStyle(
+                                          maximumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          minimumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(99.0),
+                                          ))),
+                                      child: Icon(
+                                        size: 30.0,
+                                        Icons.timelapse,
+                                        color: Colors.black,
+                                      ),
+                                      onPressed: () => Navigator.pop(context),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "Minút:",
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    widget.recept.cas,
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
+                      widget.recept.porcii.isNotEmpty
+                          ? Container(
+                              height: 100.0,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: style.MainAppStyle().buttonBG,
+                                borderRadius: BorderRadius.circular(99.0),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: TextButton(
+                                      style: ButtonStyle(
+                                          maximumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          minimumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(99.0),
+                                          ))),
+                                      child: Icon(
+                                        size: 30.0,
+                                        Icons.people,
+                                        color: Colors.black,
+                                      ),
+                                      onPressed: () => Navigator.pop(context),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "Porcií:",
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    widget.recept.porcii,
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
+                      widget.recept.KCal.isNotEmpty
+                          ? Container(
+                              height: 100.0,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: style.MainAppStyle().buttonBG,
+                                borderRadius: BorderRadius.circular(99.0),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: TextButton(
+                                      style: ButtonStyle(
+                                          maximumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          minimumSize: MaterialStateProperty.all(Size(45.0, 45.0)),
+                                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(99.0),
+                                          ))),
+                                      child: Icon(
+                                        size: 30.0,
+                                        Icons.local_fire_department_rounded,
+                                        color: Colors.black,
+                                      ),
+                                      onPressed: () => Navigator.pop(context),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "KCal:",
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    widget.recept.KCal,
+                                    style: TextStyle(color: Colors.white, fontSize: 12.0, fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
+                    ],
+                  ),
+
+                  //////////////////////
                   SizedBox(height: 20.0),
-                  widget.recept.Postup.isNotEmpty
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Postup:",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.vertical,
-                              shrinkWrap: true,
-                              itemCount: postupList.length,
-                              itemBuilder: (BuildContext context, index) {
-                                return Row(
-                                  children: [
-                                    Text('${index} '),
-                                    Expanded(
-                                        child: Text('${postupList[index]}')),
-                                  ],
-                                );
-                              },
-                            ),
-                          ],
-                        )
-                      : Container(),
-                  widget.recept.Ingrediencie.isNotEmpty
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Ingrediencie:",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Html(
-                              data: widget.recept.Ingrediencie,
-                              style: {
-                                'p': Style(
-                                  fontSize: FontSize(14.0),
-                                  lineHeight: LineHeight(1.7),
-                                  textAlign: TextAlign.justify,
-                                  color: Colors.black54,
-                                ),
-                              },
-                            ),
-                          ],
-                        )
-                      : Container(),
                   widget.recept.description.isNotEmpty
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,8 +254,9 @@ class _ReceptScreenState extends State<ReceptScreen> {
                             Text(
                               "Popis:",
                               style: TextStyle(
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 fontWeight: FontWeight.w500,
+                                color: style.MainAppStyle().mainColor,
                               ),
                             ),
                             Html(
@@ -187,10 +270,96 @@ class _ReceptScreenState extends State<ReceptScreen> {
                                 ),
                               },
                             ),
+                            SizedBox(
+                              height: 30.0,
+                            )
                           ],
                         )
                       : Container(),
-                  SizedBox(height: 20.0),
+                  widget.recept.Postup.isNotEmpty
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Postup:",
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500,
+                                color: style.MainAppStyle().mainColor,
+                              ),
+                            ),
+                            ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              padding: EdgeInsets.only(top: 15.0),
+                              shrinkWrap: true,
+                              itemCount: postupList.length,
+                              itemBuilder: (BuildContext context, index) {
+                                return Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    //Text('${index + 1} '),
+
+                                    Container(
+                                      margin: EdgeInsets.only(top: 10),
+                                      height: 10.0,
+                                      width: 10,
+                                      decoration: BoxDecoration(
+                                        color: style.MainAppStyle().buttonBG,
+                                        borderRadius: BorderRadius.circular(99.0),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Expanded(
+                                        child: Text(
+                                      postupList[index],
+                                      style: TextStyle(
+                                        fontSize: 14.0,
+                                        height: 1.7,
+                                        color: Colors.black54,
+                                      ),
+                                    )),
+                                  ],
+                                );
+                              },
+                            ),
+                            SizedBox(
+                              height: 30.0,
+                            )
+                          ],
+                        )
+                      : Container(),
+                  widget.recept.Ingrediencie.isNotEmpty
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Ingrediencie:",
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500,
+                                color: style.MainAppStyle().mainColor,
+                              ),
+                            ),
+                            Html(
+                              data: widget.recept.Ingrediencie,
+                              style: {
+                                'p': Style(
+                                  fontSize: FontSize(14.0),
+                                  lineHeight: LineHeight(1.7),
+                                  textAlign: TextAlign.justify,
+                                  color: Colors.black54,
+                                ),
+                              },
+                            ),
+                            SizedBox(
+                              height: 30.0,
+                            )
+                          ],
+                        )
+                      : Container(),
                 ],
               ),
             ),

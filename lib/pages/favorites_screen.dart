@@ -45,7 +45,7 @@ class _FavoritesListState extends State<FavoritesList> {
       ),
       /* BOTTOM MENU */
       bottomNavigationBar: const bottomMenu(
-        index: 2,
+        index: 3,
       ),
     );
   }

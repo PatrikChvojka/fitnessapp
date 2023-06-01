@@ -68,15 +68,6 @@ class KategoriaReceptyList extends StatelessWidget {
               padding: EdgeInsets.all(5),
               decoration: new BoxDecoration(
                 borderRadius: new BorderRadius.circular(10.0),
-                color: Color.fromARGB(255, 238, 238, 238),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(196, 148, 70, 0.1),
-                    spreadRadius: 0,
-                    blurRadius: 6,
-                    offset: Offset(-3, 2),
-                  ),
-                ],
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,8 +92,8 @@ class KategoriaReceptyList extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             receptRow.name,
                             style: TextStyle(
-                              fontSize: 14.0,
-                              color: style.MainAppStyle().secondColor,
+                              fontSize: 15.0,
+                              color: style.MainAppStyle().mainColor,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -114,7 +105,7 @@ class KategoriaReceptyList extends StatelessWidget {
                             style: TextStyle(
                               height: 1.3,
                               fontSize: 12.0,
-                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
                             ),
                           ),
                         ],

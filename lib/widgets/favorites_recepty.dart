@@ -193,8 +193,8 @@ class FavoritesReceptyList extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             receptRow.name,
                             style: TextStyle(
-                              fontSize: 14.0,
-                              color: style.MainAppStyle().secondColor,
+                              fontSize: 15.0,
+                              color: style.MainAppStyle().mainColor,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

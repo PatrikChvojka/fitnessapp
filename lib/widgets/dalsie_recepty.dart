@@ -96,9 +96,9 @@ class DalsieReceptyList extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             receptRow.name,
                             style: TextStyle(
-                              fontSize: 14.0,
-                              color: style.MainAppStyle().secondColor,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 15.0,
+                              color: style.MainAppStyle().mainColor,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                           SizedBox(height: 5.0),
