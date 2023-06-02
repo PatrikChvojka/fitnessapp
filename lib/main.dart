@@ -10,10 +10,13 @@ import 'pages/favorites_screen.dart';
 import 'pages/kategorie_screen.dart';
 import 'pages/login_screen.dart';
 import 'pages/profile_screen.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+  print(fcmToken);
   runApp(const MyApp());
 }
 
